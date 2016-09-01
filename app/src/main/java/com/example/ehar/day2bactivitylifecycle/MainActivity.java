@@ -1,5 +1,6 @@
 package com.example.ehar.day2bactivitylifecycle;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,8 +26,39 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this,
                         R.string.toast_text,
                         Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(
+                        MainActivity.this,
+                        Main2Activity.class
+                        );
+                intent.putExtra("PI", 3.14159);
+                startActivity(intent);
             }
         });
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 }
